@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Neucha");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Default Light Theme */
+.light-theme {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: all 0.2s;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+
+@media screen and (max-width: 700px) {
+  .item-container:hover .img {
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .item-container:hover {
+    background: #fff;
+    border-radius: 0;
+  }
+}
+.item-container .img {
+  width: 100%;
+  padding: 2rem;
+}
+@media screen and (max-width: 700px) {
+  .item-container .img {
+    padding: 0.5rem;
+  }
+}
+.item-container .info {
+  float: left;
+  width: 100%;
+  font-size: 1.1rem;
+}
+.item-container h1 {
+  text-transform: capitalize;
+  color: #333;
+  cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+  .item-container h1 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .item-container h2 {
+    font-size: 1rem;
+  }
+}
+
+
+.list-container {
+  display: block;
+  width: 80%;
+  padding: 0 1rem;
+  margin-top: 3.5rem;
+  height: 100%;
+  overflow-y: auto;
+}
+@media screen and (max-width: 700px) {
+  .list-container {
+    width: 100%;
+    margin-top: 4rem;
+    padding-bottom: 30vh;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .list-container {
+    width: 70%;
+  }
+}
+.list-container.lg {
+  width: 100%;
+}
+
+.popup {
+  position: fixed;
+  z-index: 10;
+  height: auto;
+  width: 19%;
+  overflow: auto;
+  max-height: calc(100% - 5rem);
+  transition: 0.5s all;
+  background: #eee;
+  color: #06386d;
+  top: 5rem;
+  right: 1%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px #ccc;
+  font-family: "Neucha", cursive;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .popup {
+    width: 29%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .popup {
+    top: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: none;
+    width: 100%;
+    max-height: 30vh;
+    overflow: auto;
+    border-radius: 0;
+    border: 5px solid #fff;
+  }
+}
+.popup .cart .cart_item {
+  float: left;
+  width: 100%;
+  border-bottom: 1px dashed #ccc;
+  padding: 5px 0;
+}
+.popup .cart .cart_item:last-child {
+  border: none;
+}
+.popup .cart .cart_item h3 {
+  float: left;
+  width: auto;
+  font-size: 1rem;
+}
+.popup .cart .cart_item h3:last-child {
+  float: right;
+}
+.popup .final_price {
+  border-top: 2px dashed #222;
+  padding: 1rem 0;
+  float: left;
+  width: 100%;
+}
+.popup .final_price h3 {
+  font-size: 1rem;
+  float: left;
+  width: auto;
+}
+.popup .final_price h3:nth-child(even) {
+  float: right;
+}
+.popup .final_price .cart_item {
+  border: none;
+  float: left;
+  width: 100%;
+}
+
+.order_btn {
+  border: none;
+  outline: none;
+  background: salmon;
+  color: #fff;
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  padding: 0.8rem;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.thank_you {
+  position: fixed;
+  z-index: 15;
+  background: #eee;
+  text-transform: capitalize;
+  text-align: center;
+  top: 0;
+  left: 0;
+  padding: 5rem;
+  height: 100%;
+  width: 100%;
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+}
+@media screen and (max-width: 700px) {
+  .thank_you {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+}
+.thank_you h1 {
+  width: 100%;
+  float: left;
+}
+.thank_you p {
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .thank_you p {
+    font-size: 1.2rem;
+  }
+}
+.thank_you .order_btn {
+  width: auto;
+  padding: 1rem 2rem;
+}
+@media screen and (max-width: 700px) {
+  .thank_you .order_btn {
+    padding: 0.7rem 1rem;
+  }
+}
+
+.navbar {
+  float: left;
+  width: 96%;
+  margin: 0 2%;
+  padding: 0.8rem 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #e55;
+  text-align: center;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 700px) {
+  .navbar {
+    padding: 0.7rem;
+    width: 100%;
+    margin: 0;
+  }
+}
+.navbar .logo {
+  display: inline-block;
+}
+@media screen and (max-width: 700px) {
+  .navbar .logo {
+    float: left;
+  }
+}
+.navbar .logo img {
+  transform: rotate(-10deg);
+  width: 2rem;
+  float: left;
+}
+.navbar .logo h1 {
+  float: left;
+  padding: 0 0.7rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  font-family: "Righteous", cursive;
+}
+@media screen and (max-width: 700px) {
+  .navbar .logo h1 {
+    font-size: 1.5rem;
+    padding-top: 0;
+  }
+}
+.navbar .popup_btn {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+}
+@media screen and (max-width: 700px) {
+  .navbar .popup_btn {
+    top: 0.7rem;
+    right: 1rem;
+  }
+}
+.navbar .popup_btn img {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+@media screen and (max-width: 700px) {
+  .navbar .popup_btn img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.navbar .popup_btn span {
+  height: 1.2rem;
+  width: 1.2rem;
+  font-size: 0.7rem;
+  border-radius: 100%;
+  background: #f9da48;
+  color: #FF5722;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -20%;
+  bottom: 0;
+  border: 2px solid #FFC107;
+  animation: cart_num 0.3s;
+}
+@media screen and (max-width: 700px) {
+  .navbar .popup_btn span {
+    height: 1.2rem;
+    width: 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes cart_num {
+  0% {
+    transform: scale(0);
+    box-shadow: 0px 0px 4px 2px #fff;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 0px 4px 10px transparent;
+  }
+}
+.order {
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: #eee;
+  color: #06386d;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px #ccc;
+  font-family: "Neucha", cursive;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.order .cart_left {
+  float: left;
+  width: 70%;
+  overflow: auto;
+  height: calc(100vh - 10rem);
+}
+@media screen and (max-width: 700px) {
+  .order .cart_left {
+    height: auto;
+    width: 100%;
+  }
+}
+.order .cart_left .cart_item {
+  width: 100%;
+  float: left;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+.order .cart_left .cart_item img {
+  width: 5rem;
+  float: left;
+}
+.order .cart_left .cart_item .cart_info {
+  float: left;
+  padding: 1rem;
+  width: calc(100% - 5rem);
+}
+.order .cart_right {
+  float: right;
+  width: calc(30% - 1rem);
+  margin: 0 0 0 0.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+}
+@media screen and (max-width: 700px) {
+  .order .cart_right {
+    margin: 0;
+    width: 100%;
+  }
+}
+.order .cart_right .cart_item, .order .cart_right .final_price {
+  float: left;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.order .cart_right .cart_item h3, .order .cart_right .final_price h3 {
+  float: left;
+  font-size: 1rem;
+}
+.order .cart_right .cart_item h3:last-child, .order .cart_right .final_price h3:last-child {
+  float: right;
+}
+.order .cart_right .final_price {
+  border-top: 2px dashed #333;
+  padding: 1rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+.order .cart_right .final_price:first-child {
+  border: none;
+  padding: 0.5rem 0;
+  color: #06386d;
+  font-size: 1.1rem;
+}

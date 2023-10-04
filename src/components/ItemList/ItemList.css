@@ -1,0 +1,74 @@
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(30% - 2rem);
+  padding: 1rem;
+  text-align: center;
+  display: inline-block;
+  margin: 1rem;
+  overflow: hidden;
+  color: #333;
+  position: relative;
+  text-transform: capitalize;
+}
+.item-container:hover {
+  background-color: #f0f0f0;
+  border: 1px solid #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.buyButton {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #66ff66;
+  color: ghostwhite;
+ }
+ 
+ .buyButton span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+ }
+ 
+ .buyButton:hover span {
+  color: black;
+ }
+ 
+ .buyButton::before,
+ .buyButton::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+ }
+ 
+ .buyButton::before {
+  content: "";
+  background: #665e5e;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+ }
+ 
+ .buyButton:hover::before {
+  transform: translate3d(100%, 0, 0);
+ }
+ 
