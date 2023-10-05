@@ -21,7 +21,13 @@ body {
   color: #ffffff;
 }
 
-
+/* Dark theme for .navbar */
+.nav-dark-theme {
+  background: #333; /* Change the background color to a dark color */
+  color: #fff; /* Change the text color to white or a light color that contrasts with the background */
+  box-shadow: none; /* Remove the box shadow */
+  border-bottom: none; /* Remove the bottom border */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

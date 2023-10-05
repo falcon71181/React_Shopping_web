@@ -7,22 +7,22 @@ const Header = (props) => {
   useEffect(() => {
     const toggleThemeButton = document.getElementById('toggle-theme-button');
     const contentDiv = document.getElementById('root');
-    const contentNav = document.getElementById('navbar');
+    const contentNav = document.getElementById('nav-bar');
 
     const toggleTheme = () => {
       contentDiv.classList.toggle('dark-theme');
+      contentNav.classList.toggle('nav-dark-theme');
     };
 
     toggleThemeButton.addEventListener('click', toggleTheme);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       toggleThemeButton.removeEventListener('click', toggleTheme);
     };
   }, []);
 
   return (
-    <div className="navbar">
+    <div className="navbar" id="nav-bar">
       <span className="logo">
         <img src="https://avatars.githubusercontent.com/u/48170773?s=96&v=4" alt="logo" />
         <h1>Market Fx</h1>
