@@ -1,35 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
-
 const Header = (props) => {
-  const togthem = () => {
+  useEffect(() => {
     const toggleThemeButton = document.getElementById('toggle-theme-button');
     const contentDiv = document.getElementById('root');
+    const contentNav = document.getElementById('navbar');
 
-    toggleThemeButton.addEventListener('click', () => {
-        contentDiv.classList.toggle('dark-theme');
-        alert("changing");
-    });
-  }
+    const toggleTheme = () => {
+      contentDiv.classList.toggle('dark-theme');
+    };
+
+    toggleThemeButton.addEventListener('click', toggleTheme);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      toggleThemeButton.removeEventListener('click', toggleTheme);
+    };
+  }, []);
 
   return (
     <div className="navbar">
       <span className="logo">
         <img src="https://avatars.githubusercontent.com/u/48170773?s=96&v=4" alt="logo" />
-        <h1>Markect Fx</h1>
+        <h1>Market Fx</h1>
       </span>
       <div className="toggle-container">
-      <FontAwesomeIcon icon={faSun} />
-<label className="switch">
-  <input type="checkbox"></input>
-  <span className="slider round"></span>
-</label>
-<FontAwesomeIcon icon={faMoon} />
-    </div>
-      <button className="popup_btn">
+        <FontAwesomeIcon icon={faSun} />
+        <label className="switch">
+          <input type="checkbox"></input>
+          <span className="slider round" id="toggle-theme-button"></span>
+        </label>
+        <FontAwesomeIcon icon={faMoon} />
+      </div>
+      <button className="popup_btn" onClick={Header}>
         <img src="https://img.icons8.com/?size=256&id=TjtYhw4ENJsZ&format=png" />
         {props.totalItems !== 0 ? <span>{props.totalItems}</span> : null}
       </button>
