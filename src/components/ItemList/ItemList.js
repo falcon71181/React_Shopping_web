@@ -20,7 +20,7 @@ function ItemList(props) {
            <span> Buy Now</span>
           </button>
         </div>
-      ))}
+      ))};
     </div>
   );
 }
