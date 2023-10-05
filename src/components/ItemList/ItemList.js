@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import { Button, Drawer } from 'react-rainbow-components';
 import './ItemList.css';
+import SideCart from "../SideCart/SideCart";
 
 function ItemList(props) {
-  const { items, onAdd, onRemove } = props;
+  const {
+    onAdd,
+    onRemove,
+    totalItems,
+    items,
+    total,
+    packaging,
+    onPopup,
+    onThankPopup,
+  } = props;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  
+
   const openDrawer = () => {
     setIsDrawerOpen(true);
   };
@@ -14,7 +24,6 @@ function ItemList(props) {
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
-
 
   return (
     <div className="list-container">
@@ -24,18 +33,31 @@ function ItemList(props) {
           <h3>{item.name}</h3>
           <b>${item.cost.toFixed(2)}</b>
           <br></br>
-          <button type="button" className="buyButton" onClick={openDrawer}>
+          <button type="button" className="buyButton" onClick={() => { openDrawer(); onAdd(item.name, item.cost); }}>
             <span>Add To Cart</span>
           </button>
+          {isDrawerOpen && (
+            <div className="overlay"></div>
+          )}
           <Drawer
             header="Item Details"
             slideFrom="right"
+            size="small"
             isOpen={isDrawerOpen}
             onRequestClose={closeDrawer}
             position="right"
-          ></Drawer>
+          >
+            <SideCart
+              totalItems={totalItems}
+              items={items}
+              total={total}
+              packaging={packaging}
+              onPopup={onPopup}
+              onThankPopup={onThankPopup}
+            />
+          </Drawer>
           <button type="button" className="buyButton" onClick={() => onRemove(item.name, item.cost)}>
-           <span> Buy Now</span>
+            <span> Buy Now</span>
           </button>
         </div>
       ))}

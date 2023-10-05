@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import list from "./lists";
 import Header from "./Header/Header";
 import ItemList from "./ItemList/ItemList";
-import SideCart from "./SideCart/SideCart";
 import OrderPage from "./OrderPage/OrderPage";
 
 class Home extends Component {
@@ -56,11 +55,8 @@ class Home extends Component {
         <div>
           <Header totalItems={this.state.total_items} />
           <ItemList
-            items={this.state.items}
             onAdd={this.add}
             onRemove={this.remove}
-          />
-          <SideCart
             totalItems={this.state.total_items}
             items={this.state.items}
             total={this.state.total}
