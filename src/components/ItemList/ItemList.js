@@ -15,20 +15,19 @@ function ItemList(props) {
     onThankPopup,
   } = props;
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false); // Define isDrawerOpen state
+  const openDrawer = () => { setIsDrawerOpen(true); }; // Define openDrawer function
+  const closeDrawer = () => { setIsDrawerOpen(false); }; // Define closeDrawer function
 
-  const openDrawer = () => {
-    setIsDrawerOpen(true);
-  };
-
-  const closeDrawer = () => {
-    setIsDrawerOpen(false);
+  const closeDrawerAndOrder = () => {
+    closeDrawer();
+    onPopup();
   };
 
   return (
     <div className="list-container">
       {items.map((item, id) => (
-        <div className="item-container" key={id}>
+        <div className="item-container" id="item-container-theme" key={id}>
           <img src={item.src} alt={item.name} className="img" />
           <h3>{item.name}</h3>
           <b>${item.cost.toFixed(2)}</b>
@@ -54,6 +53,7 @@ function ItemList(props) {
               packaging={packaging}
               onPopup={onPopup}
               onThankPopup={onThankPopup}
+              closeDrawer={closeDrawerAndOrder}
             />
           </Drawer>
           <button type="button" className="buyButton" onClick={() => onRemove(item.name, item.cost)}>

@@ -8,10 +8,12 @@ const Header = (props) => {
     const toggleThemeButton = document.getElementById('toggle-theme-button');
     const contentDiv = document.getElementById('root');
     const contentNav = document.getElementById('nav-bar');
+    const contentItem = document.getElementById('item-container-theme');
 
     const toggleTheme = () => {
       contentDiv.classList.toggle('dark-theme');
       contentNav.classList.toggle('nav-dark-theme');
+      contentItem.classList.toggle('item-container-dark');
     };
 
     toggleThemeButton.addEventListener('click', toggleTheme);

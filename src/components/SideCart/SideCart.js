@@ -8,6 +8,7 @@ function SideCart(props) {
     packaging,
     onPopup,
     onThankPopup,
+    closeDrawer,
   } = props;
 
   return (
@@ -48,7 +49,7 @@ function SideCart(props) {
               <h3>Total Price:</h3>
               <h3>${(total + packaging + 3).toFixed(2)}</h3>
             </div>
-            <button className="order_btn" onClick={() => onPopup()}>
+            <button className="order_btn" onClick={() => { onPopup(); closeDrawer(); }}>
               Order Now
             </button>
           </div>
