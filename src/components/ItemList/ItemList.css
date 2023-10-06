@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(26% - 1rem);
+  width: calc(30% - 1rem);
   height: 100%;
   padding: 1rem;
   text-align: center;
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(30% - 2rem);
+  width: calc(30% - 1rem);
   padding: 1rem;
   text-align: center;
   display: inline-block;
@@ -28,6 +28,12 @@
   text-transform: capitalize;
 }
 .item-container:hover {
+  --background: linear-gradient(to left, #e6e2d8 0%, #a6cb94 100%);
+  overflow: visible;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
   background-color: #f0f0f0;
   border: 1px solid #333;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
