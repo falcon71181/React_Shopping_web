@@ -13,9 +13,9 @@ class Home extends Component {
     popup: false,
     thank_popup: false
   };
-    add = (name, cost) => {
-      this.state.items.map((item, id) => {
-        if (item.name === name) {
+    add = (id, cost) => {
+      this.state.items.map((item) => {
+        if (item.id === id) {
           item.qty += 1;
         }
       });
@@ -42,7 +42,7 @@ class Home extends Component {
         popup: !this.state.popup
       });
     };
-    thank_popup = () => {
+    fun_Thank_popup = () => {
       this.setState({
         thank_popup: !this.state.thank_popup
       });
@@ -50,6 +50,7 @@ class Home extends Component {
     reload = () => {
       window.location.href = window.location.href;
     };
+
     render() {
       return (
         <div>
@@ -62,11 +63,12 @@ class Home extends Component {
             total={this.state.total}
             packaging={this.state.packaging}
             onPopup={this.popup}
-            onThankPopup={this.thank_popup}
+            onThankPopup={this.fun_Thank_popup}
           />
           <OrderPage
             popup={this.state.popup}
-            thankPopup={this.state.thank_popup}
+            thankPopupFunc={this.state.fun_Thank_popup}
+            thank_popup={this.state.thank_popup}
             totalItems={this.state.total_items}
             items={this.state.items}
             total={this.state.total}

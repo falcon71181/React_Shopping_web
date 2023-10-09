@@ -32,7 +32,7 @@ function ItemList(props) {
           <h3>{item.name}</h3>
           <b>${item.cost.toFixed(2)}</b>
           <br></br>
-          <button type="button" className="buyButton" onClick={() => { openDrawer(); onAdd(item.name, item.cost); }}>
+          <button type="button" className="buyButton" onClick={() => { openDrawer(); onAdd(item.id,item.cost); }}>
             <span>Add To Cart</span>
           </button>
           {isDrawerOpen && (
@@ -56,7 +56,7 @@ function ItemList(props) {
               closeDrawer={closeDrawerAndOrder}
             />
           </Drawer>
-          <button type="button" className="buyButton" onClick={() => onRemove(item.name, item.cost)}>
+          <button type="button" className="buyButton" onClick={() => { openDrawer() }}>
             <span> Buy Now</span>
           </button>
         </div>

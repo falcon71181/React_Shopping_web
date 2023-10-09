@@ -3,13 +3,16 @@ import React from "react";
 function OrderPage(props) {
   const {
     popup,
-    thankPopup,
+    thankPopupFunc,
+    thank_popup,
     totalItems,
     items,
     total,
     packaging,
     onReload,
   } = props;
+
+  console.log(items);
 
   return (
     <div className="orderpage">
@@ -53,14 +56,14 @@ function OrderPage(props) {
               <h3>Total Price:</h3>
               <h3>${(total + packaging + 3).toFixed(2)}</h3>
             </div>
-            <button className="order_btn" onClick={() => onReload()}>
+            <button className="order_btn" onClick={thankPopupFunc}>
               order now
             </button>
           </div>
         </div>
       ) : null}
 
-      {thankPopup ? (
+      {thank_popup ? (
         <div className="thank_you">
           <h1>Thank you</h1>
           <p>We will deliver your package at your doorstep shortly.</p>

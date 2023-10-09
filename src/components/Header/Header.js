@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import SideCart from "../SideCart/SideCart";
 
 const Header = (props) => {
   useEffect(() => {
@@ -32,13 +33,13 @@ const Header = (props) => {
       <div className="toggle-container">
         <FontAwesomeIcon icon={faSun} />
         <label className="switch">
-          <input type="checkbox"></input>
-          <span className="slider round" id="toggle-theme-button"></span>
+          <input type="checkbox" id="toggle-theme-button" />
+          <span className="slider round"></span>
         </label>
         <FontAwesomeIcon icon={faMoon} />
       </div>
-      <button className="popup_btn" onClick={Header}>
-        <img src="https://img.icons8.com/?size=256&id=TjtYhw4ENJsZ&format=png" />
+      <button className="popup_btn" onClick={SideCart}>
+        <img src="https://img.icons8.com/?size=256&id=TjtYhw4ENJsZ&format=png" alt="cart icon" />
         {props.totalItems !== 0 ? <span>{props.totalItems}</span> : null}
       </button>
     </div>
