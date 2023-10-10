@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import SideCart from "../SideCart/SideCart";
 
 const Header = (props) => {
   useEffect(() => {
@@ -38,7 +37,7 @@ const Header = (props) => {
         </label>
         <FontAwesomeIcon icon={faMoon} />
       </div>
-      <button className="popup_btn" onClick={SideCart}>
+      <button className="popup_btn" onClick={props.onPopup}>
         <img src="https://img.icons8.com/?size=256&id=TjtYhw4ENJsZ&format=png" alt="cart icon" />
         {props.totalItems !== 0 ? <span>{props.totalItems}</span> : null}
       </button>

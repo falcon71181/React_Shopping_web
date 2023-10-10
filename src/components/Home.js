@@ -54,7 +54,10 @@ class Home extends Component {
     render() {
       return (
         <div>
-          <Header totalItems={this.state.total_items} />
+          <Header 
+            totalItems={this.state.total_items}
+            onPopup={this.popup}
+          />
           <ItemList
             onAdd={this.add}
             onRemove={this.remove}
@@ -67,7 +70,7 @@ class Home extends Component {
           />
           <OrderPage
             popup={this.state.popup}
-            thankPopupFunc={this.state.fun_Thank_popup}
+            thankPopupFunc={this.fun_Thank_popup}
             thank_popup={this.state.thank_popup}
             totalItems={this.state.total_items}
             items={this.state.items}

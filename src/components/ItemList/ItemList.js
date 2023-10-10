@@ -15,9 +15,9 @@ function ItemList(props) {
     onThankPopup,
   } = props;
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false); // Define isDrawerOpen state
-  const openDrawer = () => { setIsDrawerOpen(true); }; // Define openDrawer function
-  const closeDrawer = () => { setIsDrawerOpen(false); }; // Define closeDrawer function
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const openDrawer = () => { setIsDrawerOpen(true); };
+  const closeDrawer = () => { setIsDrawerOpen(false); };
 
   const closeDrawerAndOrder = () => {
     closeDrawer();

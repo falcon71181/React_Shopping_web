@@ -63,7 +63,7 @@ function OrderPage(props) {
         </div>
       ) : null}
 
-      {thank_popup ? (
+      {thank_popup && (
         <div className="thank_you">
           <h1>Thank you</h1>
           <p>We will deliver your package at your doorstep shortly.</p>
@@ -71,7 +71,7 @@ function OrderPage(props) {
             Go Back to Shopping
           </button>
         </div>
-      ) : null}
+      )}
     </div>
   );
 }
